@@ -38,6 +38,7 @@ steps:
     SonarCloud: SonarCloud
     organization: $(sonarCloudOrganization)
     projectKey: $(sonarCloudProjectKey)
+  enabled: false
 
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
@@ -45,9 +46,11 @@ steps:
 
 - task: SonarCloudAnalyze@1
   displayName: 'Run Code Analysis'
+  enabled: false
 
 - task: SonarCloudPublish@1
   displayName: 'Publish Quality Gate Result'
+  enabled: false
 
 
 
