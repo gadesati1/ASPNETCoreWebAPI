@@ -1,4 +1,4 @@
-# stage 1
+# stage 2
 FROM microsoft/aspnetcore-build:2.0.0 AS build
 WORKDIR /code
 COPY . .
